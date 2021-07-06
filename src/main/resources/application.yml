@@ -41,3 +41,9 @@ logging:
   level:
     jdbc.resultsettable: INFO
     org.springframework.web: INFO
+  file:
+    name: ${file.separator}logs${file.separator}toprojectapi.log
+  logback:
+    rollingpolicy:
+      max-history: 3
+      max-file-size: 10MB
