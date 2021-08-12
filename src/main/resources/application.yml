@@ -10,8 +10,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: glddld4@gmail.com
+    password: rladlrwn89@
     properties:
       mail:
         smtp:
@@ -19,12 +19,10 @@ spring:
           starttls:
             enable: true
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url:
-    #    url: jdbc:log4jdbc:mysql://db.dev-epayday.co.kr:3307/miledb
-    username:
-    password:
-    #    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: rladlrwn89
+    url: jdbc:mysql://localhost:3306/toy
     hikari:
       pool-name: hikari-cp
       maximum-pool-size: 10
@@ -32,11 +30,12 @@ spring:
       auto-commit: false
       connection-test-query: SELECT 1
   jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
     database: mysql
-    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 logging:
   level:
     jdbc.resultsettable: INFO

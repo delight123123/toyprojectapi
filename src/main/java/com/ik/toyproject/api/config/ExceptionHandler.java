@@ -1,7 +1,5 @@
 package com.ik.toyproject.api.config;
 
-import kr.co.epayday.off.admin.api.admin.biz.AdminNotFoundException;
-import kr.co.epayday.off.admin.api.admin.store.StaffNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -14,7 +12,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class ExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @org.springframework.web.bind.annotation.ExceptionHandler(value = {RuntimeException.class, AdminNotFoundException.class, StaffNotFoundException.class})
+    @org.springframework.web.bind.annotation.ExceptionHandler(value = {RuntimeException.class})
     protected ResponseEntity<Object> BadRequestException() {
         Map<String, Object> result = new HashMap<>();
         result.put("USE", "N");
