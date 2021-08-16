@@ -12,6 +12,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @NoArgsConstructor
 @Table(name = "TB_BOARD")
@@ -22,7 +23,9 @@ import java.sql.Timestamp;
 public class Board {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long boardNo;
+    @Column(length = 100, nullable = false)
     private String boardTitle;
+    @Column(length = 500)
     private String boardContent;
     @CreationTimestamp
     private Timestamp boardReg;
@@ -45,5 +48,10 @@ public class Board {
     @ManyToOne
     @JoinColumn(name = "userNo")
     private UserMain userMain;
+
+    @OneToMany(mappedBy = "board",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private List<Upfile> upfiles;
 
 }
