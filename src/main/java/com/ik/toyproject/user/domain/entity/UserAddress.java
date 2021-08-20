@@ -1,7 +1,6 @@
-package com.ik.toyproject.user.entity;
+package com.ik.toyproject.user.domain.entity;
 
 
-import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;

@@ -1,4 +1,4 @@
-package com.ik.toyproject.board.entity;
+package com.ik.toyproject.board.domain.entity;
 
 import lombok.NoArgsConstructor;
 import lombok.ToString;
